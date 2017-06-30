@@ -134,13 +134,12 @@ if self_names(matches[1]) then
 end
 return {
 patterns = {
-"^[!/]([Aa]ddname) (.*)$",
-"^[!/]([Rr]emname) (.*)$",
-"^[!/]([Nn]amelist)$",
-"^[!/]([Ss]etanswer) (.*)$",
-"^[!/]([Rr]emanswer) (.*)$",
-"^[!/]([Aa]nswerlist)$",
-"^(.*)$"
+--"^[!/]([Aa]ddname) (.*)$",
+--"^[!/]([Rr]emname) (.*)$",
+--"^[!/]([Nn]amelist)$",
+--"^[!/]([Ss]etanswer) (.*)$",
+--"^[!/]([Rr]emanswer) (.*)$",
+--"^[!/]([Aa]nswerlist)$",
 },
 run = run
 }

@@ -23,8 +23,8 @@ Professional Kaler-Bot Based On NEW TG-CLI
 git clone https://github.com/invokerbot/kaler.git
 cd kaler
 chmod +x poker.sh
-./poker install
-./poker # Enter a phone number & confirmation code.
+./poker.sh install
+./poker.sh # Enter a phone number & confirmation code.
 ```
 ### One command
 To install everything in one command, use:

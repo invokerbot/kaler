@@ -65,7 +65,7 @@ local function get_weather(location)
 	local weather = json:decode(b)
 	local city = weather.name
 	local country = weather.sys.country
-	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @News_Etehady :)'
+	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n *@News_Etehady :)*'
 	local conditions = 'شرایط فعلی آب و هوا : '
 	if weather.weather[1].main == 'Clear' then
 		conditions = conditions .. 'آفتابی☀'
@@ -87,7 +87,7 @@ local function calc(exp)
 	b,c = http.request(url)
 	text = nil
 	if c == 200 then
-    text = 'Result = '..b..'\n____________________\n @News_Etehady :)'
+    text = 'Result = '..b..'\n____________________\n *@News_Etehady :)*'
 	elseif c == 400 then
 		text = b
 	else
@@ -195,7 +195,7 @@ tdcli.sendMessage(msg.from.id, 0, 1, text, 1, 'md')
 		text = text..'\nغروب آفتاب: '..data.Sunset
 		text = text..'\nاذان مغرب: '..data.Maghrib
 		text = text..'\nعشاء : '..data.Isha
-		text = text..'\n@News_Etehady\n'
+		text = text..'\n*@News_Etehady*\n'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
@@ -214,7 +214,7 @@ tdcli.sendMessage(msg.from.id, 0, 1, text, 1, 'md')
 					local apath = tostring(tcpath)..'/data/sticker'
 					if file_exi(tostring(name), tostring(apath), tostring(pasvand)) then
 						os.rename(file, pfile)
-						tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, pfile, "@News_Etehady", dl_cb, nil)
+						tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, pfile, "*@News_Etehady*", dl_cb, nil)
 					else
 						tdcli.sendMessage(msg.to.id, msg.id_, 1, '_This sticker does not exist. Send sticker again._', 1, 'md')
 					end
@@ -236,7 +236,7 @@ tdcli.sendMessage(msg.from.id, 0, 1, text, 1, 'md')
 					local pfile = 'data/photos/'..file..'.webp'
 					if file_exi(file..'_(1).jpg', tcpath..'/data/photo', 'jpg') then
 						os.rename(pathf, pfile)
-						tdcli.sendDocument(msg.chat_id_, 0, 0, 1, nil, pfile, '@News_Etehady', dl_cb, nil)
+						tdcli.sendDocument(msg.chat_id_, 0, 0, 1, nil, pfile, '*@News_Etehady*', dl_cb, nil)
 					else
 						tdcli.sendMessage(msg.to.id, msg.id_, 1, '_This photo does not exist. Send photo again._', 1, 'md')
 					end
@@ -281,7 +281,7 @@ if matches[1] == 'voice' and is_sudo(msg) then
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
   local file = download_to_file(url,'Self-BotV2.mp3')
- 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@News_Etehady', dl_cb, nil)
+ 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '*@News_Etehady*', dl_cb, nil)
    end
 end
 
@@ -289,7 +289,7 @@ end
 	if matches[1] == "tr" and is_sudo(msg) then 
 		url = https.request('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang='..URL.escape(matches[2])..'&text='..URL.escape(matches[3]))
 		data = json:decode(url)
-		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @News_Etehady :)'
+		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n *@News_Etehady :)*'
 	end
 --------------------------------
 	if matches[1]:lower() == 'short' and is_sudo(msg) then
@@ -306,7 +306,7 @@ end
 		local opizo = http.request('http://api.gpmod.ir/shorten/?url='..URL.escape(shortlink)..'&username=mersad565@gmail.com')
 		local u2s = http.request('http://u2s.ir/?api=1&return_text=1&url='..URL.escape(shortlink))
 		local llink = http.request('http://llink.ir/yourls-api.php?signature=a13360d6d8&action=shorturl&url='..URL.escape(shortlink)..'&format=simple')
-		local text = ' 🌐لینک اصلی :\n'..check_markdown(data.data.long_url)..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..check_markdown(data.data.url)..'\n___________________________\n》کوتاه شده با yeo :\n'..check_markdown(yeo)..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..check_markdown(opizo)..'\n___________________________\n》کوتاه شده با u2s :\n'..check_markdown(u2s)..'\n___________________________\n》کوتاه شده با llink : \n'..check_markdown(llink)..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..check_markdown(jdat.output)..'\n____________________\n @News_Etehady :)'
+		local text = ' 🌐لینک اصلی :\n'..check_markdown(data.data.long_url)..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..check_markdown(data.data.url)..'\n___________________________\n》کوتاه شده با yeo :\n'..check_markdown(yeo)..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..check_markdown(opizo)..'\n___________________________\n》کوتاه شده با u2s :\n'..check_markdown(u2s)..'\n___________________________\n》کوتاه شده با llink : \n'..check_markdown(llink)..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..check_markdown(jdat.output)..'\n____________________\n *@News_Etehady :)*'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
@@ -351,28 +351,28 @@ end
 		local url = "https://assets.imgix.net/examples/clouds.jpg?blur=150&w="..w.."&h="..h.."&fit=crop&txt="..eq.."&txtsize="..txtsize.."&txtclr="..txtclr.."&txtalign=middle,center&txtfont=Futura%20Condensed%20Medium&mono=ff6598cc"
 		local receiver = msg.to.id
 		local  file = download_to_file(url,'text.jpg')
-		tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, file, "@news_etehady", dl_cb, nil)
+		tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, file, "*@news_etehady*", dl_cb, nil)
 	end
 end
 end
 --------------------------------
 return {               
 	patterns = {
-		"^[#!/](helpfun)$",
-		"^[!/#](weather) (.*)$",
-		"^[!/](calc) (.*)$",
-		"^[#!/](time)$",
-		"^[#!/](tophoto)$",
-		"^[#!/](tosticker)$",
-		"^[!/#](voice) +(.*)$",
-		"^[/!#]([Pp]raytime) (.*)$",
-		"^[/!#](praytime)$",
-		"^[/!#]([Aa]zan) (.*)$",
-		"^[/!#](azan)$",
-		"^[!/]([Tt]r) ([^%s]+) (.*)$",
-		"^[!/]([Ss]hort) (.*)$",
-		"^[!/](photo) (.+)$",
-		"^[!/](sticker) (.+)$"
+--		"^[#!/](helpfun)$",
+--		"^[!/#](weather) (.*)$",
+--		"^[!/](calc) (.*)$",
+--		"^[#!/](time)$",
+--		"^[#!/](tophoto)$",
+--		"^[#!/](tosticker)$",
+--		"^[!/#](voice) +(.*)$",
+--		"^[/!#]([Pp]raytime) (.*)$",
+--		"^[/!#](praytime)$",
+--		"^[/!#]([Aa]zan) (.*)$",
+--		"^[/!#](azan)$",
+--		"^[!/]([Tt]r) ([^%s]+) (.*)$",
+--		"^[!/]([Ss]hort) (.*)$",
+--		"^[!/](photo) (.+)$",
+--"^[!/](sticker) (.+)$"
 		}, 
 	run = run,
 	}

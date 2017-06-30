@@ -1,5 +1,5 @@
 # kaler
-# [Self-Bot](https://telegram.me/News_Etehady)
+# [Kaler-Bot](https://telegram.me/News_Etehady)
 
 Professional Kaler-Bot Based On NEW TG-CLI
 
@@ -20,7 +20,7 @@ Professional Kaler-Bot Based On NEW TG-CLI
 
 ```sh
 # Let's install the self-bot.
-git clone https://github.com/BeyondTeam/Self-BotV2.git
+git clone https://github.com/invokerbot/kaler.git
 cd kaler
 chmod +x poker.sh
 ./poker install
@@ -29,7 +29,7 @@ chmod +x poker.sh
 ### One command
 To install everything in one command, use:
 ```sh
-&& git clone https://github.com/BeyondTeam/Self-BotV2.git && cd kaler && chmod +x poker.sh && ./poker.sh install && ./poker.sh
+git clone https://github.com/invokerbot/kaler.git && cd kaler && chmod +x poker.sh && ./poker.sh install && ./poker.sh
 ```
 
 * * *
@@ -47,3 +47,6 @@ Open ./bot/bot.lua and add your ID to the "sudo_users" section in the following 
 add your ID at line 4 and 131 in bot.lua
 Then restart or reload.
 
+# [Bot Admin](https://telegram.me/Just_ice_Bot)
+
+# [Channel](https://telegram.me/News_Etehady)

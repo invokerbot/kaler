@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd kaler
+cd $HOME/kaler
 
 install() {
 	    cd tg

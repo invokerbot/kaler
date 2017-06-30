@@ -498,7 +498,7 @@ patterns = {
 --"^[!/#](save) (.*)$",
 --"^[!/#](sendplug) (.*)$",
 --"^[!/#](savefile) (.*)$",
-
+--s
 }, 
 run = run 
 }
